@@ -1,0 +1,34 @@
+body{
+    background-color: #255f85;
+    color: #ffc857;
+    text-align: center;
+    justify-content: center;
+    font-family: "Hanken Grotesk", serif;
+}
+.button{
+    background-color: #e9724c;
+    color: #ffffff;
+    border: none;
+    gap: 20px;
+   padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+font-family: "Hanken Grotesk", serif;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+.center{
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}

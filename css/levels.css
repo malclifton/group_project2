@@ -1,0 +1,83 @@
+body {
+    background-color: #255f85;
+    font-family: "Hanken Grotesk", serif;
+}
+
+.container {
+   background-color: #ffc857;
+    width: 1000px; 
+    height: auto;
+    padding: 20px;
+    border-radius: 3px;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hangman_img {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.hangman_img img {
+    width: 100%;
+}
+
+.game-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keypad {
+    margin-top: 20px;
+    background-color: #e9724c;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.keypad button {
+    background-color: #e9724c; 
+    color: white; 
+    margin: 5px; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold;
+}
+
+.keypad button:hover {
+    background-color: #d35400; 
+}
+
+.word {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+
+span {
+    font-size: 35px;
+    border-bottom: 3px solid #e9724c;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+}
