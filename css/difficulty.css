@@ -3,7 +3,7 @@ body{
     color: #ffc857;
     text-align: center;
     justify-content: center;
-    font-family: "Hanken Grotesk", serif;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .button{
     background-color: #e9724c;
@@ -18,7 +18,7 @@ body{
   cursor: pointer;
   width: 120px;
   height: 40px;
-font-family: "Hanken Grotesk", serif;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
 display: inline-flex;
 align-items: center;
 justify-content: center;

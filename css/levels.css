@@ -1,6 +1,8 @@
 body {
     background-color: #255f85;
-    font-family: "Hanken Grotesk", serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-weight: bold;
 }
 
 .container {
