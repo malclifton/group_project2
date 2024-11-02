@@ -17,13 +17,13 @@
   <div class="center">
     <header>
       <h1>˗ˏˋ ´ˎ˗ YOU WON ˗ˏˋ ´ˎ˗</h1>
-      <h3>GO TO NEXT LEVEL?</h3>
+      <h3>YOU COMPLETED ALL LEVELS!!!</h3>
 
       <!-- Form submits to the same page -->
       <form method="POST">
         <label for="player_name">Enter your name:</label>
         <input type="text" id="player_name" name="player_name" required />
-        <input type="hidden" name="score" value="100" />
+        <input type="hidden" name="score" value="300" />
         <button type="submit">Submit Score</button>
       </form>
     </header>
@@ -55,9 +55,10 @@
       setcookie('scores', json_encode($scores), time() + (86400 * 30), "/");
     }
     ?>
+
     <!-- Button to navigate to home or next level -->
     <a class="button" href="../main.html">← HOME</a>
-    <a class="button" href="./n_level2.php">LEVEL 2 →</a>
+    <a class="button" href="../leaderboard.php">LEADERBOARD</a>
   </div>
 </body>
 

@@ -188,7 +188,7 @@ if (isset($_GET['kp'])) {
 
 <body>
     <audio controls autoplay hidden loop>
-        <source src="./img/lofi.mp3" type="audio/mpeg" />
+        <source src="../img/lofi.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
     </audio>
     <br><br><br><br><br>
