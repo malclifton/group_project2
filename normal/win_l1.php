@@ -10,10 +10,7 @@
 </head>
 
 <body>
-  <audio controls autoplay hidden loop>
-    <source src="../img/lofi.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
+
   <div class="center">
     <header>
       <h1>˗ˏˋ ´ˎ˗ YOU WON ˗ˏˋ ´ˎ˗</h1>
