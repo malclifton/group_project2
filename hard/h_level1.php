@@ -12,13 +12,13 @@ $responses = ["H", "G", "A"];
 $bodyParts = ["empty", "head", "neck", "body", "arm", "arms", "leg", "full"];
 //change to get words from a text file
 $words = [
-    "TABERNACLE",
-    "VACCINATED",
-    "WAITLISTED",
-    "FAIRGROUND",
-    "EARTHQUAKE",
-    "CALISTHENICS",
-    "ABANDONING",
+    "THUNDERSTORM",
+    "ATMOSPHERE",
+    "LIGHTNING",
+    "BLIZZARD",
+    "HURRICANE",
+    "PRECIPITATION",
+    "MONSOON",
 ];
 
 //respond to guesses
@@ -209,7 +209,9 @@ if (isset($_GET['kp'])) {
                         <?php endif; ?>
                     <?php endfor; ?>
                 </div>
-                <br><br>
+                <br>
+                Hint: Weather
+                <br>
                 <div class="keypad">
                     <form method="get">
                         <?php
