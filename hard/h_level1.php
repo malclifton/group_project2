@@ -143,7 +143,7 @@ if (isset($_GET['kp'])) {
         if (isWordCorrect()) {
             $WON = true;
             markGameAsComplete();
-            header('Location: ./win_hl1.html'); //goes to win page
+            header('Location: ./win_hl1.php'); //goes to win page
             exit();
         }
     } else {
@@ -179,10 +179,6 @@ if (isset($_GET['kp'])) {
 </head>
 
 <body>
-    <audio controls autoplay hidden loop>
-        <source src="./img/lofi.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-    </audio>
     <br><br><br><br><br>
     <div class="container">
         <div class="content-wrapper">
