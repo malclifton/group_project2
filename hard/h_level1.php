@@ -143,6 +143,7 @@ if (isset($_GET['kp'])) {
         if (isWordCorrect()) {
             $WON = true;
             markGameAsComplete();
+            restartGame();
             header('Location: ./win_hl1.php'); //goes to win page
             exit();
         }
