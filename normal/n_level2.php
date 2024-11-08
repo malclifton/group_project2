@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 $letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 $WON = false;
@@ -11,13 +12,13 @@ $responses = ["H", "G", "A"];
 $bodyParts = ["empty", "head", "neck", "body", "arm", "arms", "leg", "full"];
 //change to get words from a text file
 $words = [
-    "PURPLE",
-    "YELLOW",
-    "ORANGE",
-    "SILVER",
-    "MAROON",
-    "MAGENTA",
-    "CRIMSON",
+    "SUNFLOWER",
+    "TULIP",
+    "PEONY",
+    "AZALEA",
+    "ORCHID",
+    "BEGONIA",
+    "DAFFODIL",
 ];
 
 //respond to guesses
@@ -143,7 +144,7 @@ if (isset($_GET['kp'])) {
             $WON = true;
             markGameAsComplete();
             restartGame();
-            header('Location: ./win_l1.php'); //goes to win page
+            header('Location: ./win_l2.php'); //goes to win page
             exit();
         }
     } else {
@@ -153,13 +154,13 @@ if (isset($_GET['kp'])) {
             if (isBodyComplete()) {
                 markGameAsComplete(); //lost condition
                 restartGame();
-                header('Location: ./lose_l1.html');
+                header('Location: ./lose_l2.html');
                 exit();
             }
         } else {
             markGameAsComplete(); //lost condition
             restartGame();
-            header('Location: ./lose_l1.html');
+            header('Location: ./lose_l2.html');
             exit();
         }
     }
@@ -208,7 +209,7 @@ if (isset($_GET['kp'])) {
                     <?php endfor; ?>
                 </div>
                 <br>
-                Hint: Colors
+                Hint: Types of Flowers
                 <br>
                 <div class="keypad">
                     <form method="get">

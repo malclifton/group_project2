@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 $letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 $WON = false;
@@ -11,13 +12,13 @@ $responses = ["H", "G", "A"];
 $bodyParts = ["empty", "head", "neck", "body", "arm", "arms", "leg", "full"];
 //change to get words from a text file
 $words = [
-    "PURPLE",
-    "YELLOW",
+    "STRAWBERRY",
+    "BLUEBERRY",
     "ORANGE",
-    "SILVER",
-    "MAROON",
-    "MAGENTA",
-    "CRIMSON",
+    "LEMON",
+    "PEACH",
+    "APPLE",
+    "PINEAPPLE",
 ];
 
 //respond to guesses
@@ -143,7 +144,7 @@ if (isset($_GET['kp'])) {
             $WON = true;
             markGameAsComplete();
             restartGame();
-            header('Location: ./win_l1.php'); //goes to win page
+            header('Location: ./win_l3.php'); //goes to win page
             exit();
         }
     } else {
@@ -153,13 +154,13 @@ if (isset($_GET['kp'])) {
             if (isBodyComplete()) {
                 markGameAsComplete(); //lost condition
                 restartGame();
-                header('Location: ./lose_l1.html');
+                header('Location: ./lose_l3.html');
                 exit();
             }
         } else {
             markGameAsComplete(); //lost condition
             restartGame();
-            header('Location: ./lose_l1.html');
+            header('Location: ./lose_l3.html');
             exit();
         }
     }
@@ -177,7 +178,6 @@ if (isset($_GET['kp'])) {
 </head>
 
 <body>
-
     <br><br><br><br><br>
     <div class="container">
         <div class="content-wrapper">
@@ -208,7 +208,7 @@ if (isset($_GET['kp'])) {
                     <?php endfor; ?>
                 </div>
                 <br>
-                Hint: Colors
+                Hint: Types of Fruits
                 <br>
                 <div class="keypad">
                     <form method="get">
