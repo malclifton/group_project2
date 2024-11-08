@@ -1,4 +1,38 @@
 <?php
+function updateScore($name, $newScore)
+{
+    // get existing scores
+    $scores = isset($_COOKIE['scores']) ? json_decode($_COOKIE['scores'], true) : [];
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        echo "<p>Error decoding JSON: " . json_last_error_msg() . "</p>";
+        return;
+    }
+    $updated = false;
+    // see if the name already exists
+    foreach ($scores as &$score) {
+        if ($score['name'] === $name) {
+            // update the score if the new score is <
+            if ($newScore > $score['score']) {
+                $score['score'] = $newScore;
+                $score['date'] = date("Y-m-d H:i:s");  // update date
+            }
+            $updated = true;
+            break;
+        }
+    }
+    // add if name not found
+    if (!$updated) {
+        $scores[] = [
+            'name' => $name,
+            'score' => $newScore,
+            'date' => date("Y-m-d H:i:s")
+        ];
+    }
+    // save updated scores to cookie
+    setcookie('scores', json_encode($scores), time() + (86400 * 30), "/"); // Expires in 30 days
+}
+
 function displayLeaderboard()
 {
     if (isset($_COOKIE['scores'])) {
