@@ -20,7 +20,7 @@
       <form method="POST">
         <label for="player_name">Enter your name:</label>
         <input type="text" id="player_name" name="player_name" required />
-        <input type="hidden" name="score" value="100" />
+        <input type="hidden" name="score" value="200" />
         <button type="submit">Submit Score</button>
       </form>
     </header>

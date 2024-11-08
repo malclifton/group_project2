@@ -6,11 +6,13 @@ $WON = false;
 $words = ["RAIN", "SNOW", "WIND", "FOG", "MIST"];
 $bodyParts = ["empty", "head", "neck", "body", "arm", "arms", "leg", "full"];
 
-function getCurrentPicture($part) {
+function getCurrentPicture($part)
+{
     return "../img/hangman_" . $part . ".png";
 }
 
-function restartGame() {
+function restartGame()
+{
     session_destroy();
     session_start();
     markGameAsNew();
@@ -18,23 +20,27 @@ function restartGame() {
     unset($_SESSION["responses"], $_SESSION["word"]);
 }
 
-function getParts() {
+function getParts()
+{
     global $bodyParts;
     return isset($_SESSION["parts"]) ? $_SESSION["parts"] : $bodyParts;
 }
 
-function addPart() {
+function addPart()
+{
     $parts = getParts();
     array_shift($parts);
     $_SESSION["parts"] = $parts;
 }
 
-function getCurrentPart() {
+function getCurrentPart()
+{
     $parts = getParts();
     return $parts[0];
 }
 
-function getCurrentWord() {
+function getCurrentWord()
+{
     global $words;
     if (!isset($_SESSION["word"]) && empty($_SESSION["word"])) {
         $key = array_rand($words);
@@ -43,22 +49,26 @@ function getCurrentWord() {
     return $_SESSION["word"];
 }
 
-function getCurrentResponses() {
+function getCurrentResponses()
+{
     return isset($_SESSION["responses"]) ? $_SESSION["responses"] : [];
 }
 
-function addResponse($letter) {
+function addResponse($letter)
+{
     $responses = getCurrentResponses();
     array_push($responses, $letter);
     $_SESSION["responses"] = $responses;
 }
 
-function isLetterCorrect($letter) {
+function isLetterCorrect($letter)
+{
     $word = getCurrentWord();
     return strpos($word, $letter) !== false;
 }
 
-function isWordCorrect() {
+function isWordCorrect()
+{
     $guess = getCurrentWord();
     $responses = getCurrentResponses();
     foreach (str_split($guess) as $char) {
@@ -69,19 +79,23 @@ function isWordCorrect() {
     return true;
 }
 
-function isBodyComplete() {
+function isBodyComplete()
+{
     return count(getParts()) <= 1;
 }
 
-function gameComplete() {
+function gameComplete()
+{
     return isset($_SESSION["gamecomplete"]) ? $_SESSION["gamecomplete"] : false;
 }
 
-function markGameAsComplete() {
+function markGameAsComplete()
+{
     $_SESSION["gamecomplete"] = true;
 }
 
-function markGameAsNew() {
+function markGameAsNew()
+{
     $_SESSION["gamecomplete"] = false;
 }
 
@@ -97,7 +111,7 @@ if (isset($_GET['kp'])) {
             $WON = true;
             markGameAsComplete();
             restartGame();
-            header('Location: ../easy/win3.php');
+            header('Location: ./win3.php');
             exit();
         }
     } else {
@@ -106,13 +120,13 @@ if (isset($_GET['kp'])) {
             if (isBodyComplete()) {
                 markGameAsComplete();
                 restartGame();
-                header('Location: ../easy/lose3.html');
+                header('Location: ./lose3.html');
                 exit();
             }
         } else {
             markGameAsComplete();
             restartGame();
-            header('Location: ../easy/lose3.html');
+            header('Location: ./lose3.html');
             exit();
         }
     }
@@ -120,12 +134,15 @@ if (isset($_GET['kp'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Hangman Game - Level 3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/levels.css" />
 </head>
+
 <body>
+    <br><br><br><br><br>
     <div class="container">
         <div class="content-wrapper">
             <div class="hangman_img">
@@ -157,4 +174,5 @@ if (isset($_GET['kp'])) {
         </div>
     </div>
 </body>
+
 </html>

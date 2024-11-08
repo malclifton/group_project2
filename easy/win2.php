@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Silent Strings - Level 2 Complete</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/x-icon" href="./img/logo.png" />
   <link rel="stylesheet" href="../css/difficulty.css" />
 </head>
+
 <body>
   <div class="center">
     <header>
@@ -31,7 +33,8 @@
     }
 
     // Function to save the score in a cookie
-    function saveScore($score, $name) {
+    function saveScore($score, $name)
+    {
       if (isset($_COOKIE['scores'])) {
         $scores = json_decode($_COOKIE['scores'], true);
       } else {
@@ -50,7 +53,8 @@
 
     <!-- Navigation buttons -->
     <a class="button" href="../main.html">← HOME</a>
-    <a class="button" href="../easy/e_level3.php">NEXT LEVEL →</a>
+    <a class="button" href="./e_level3.php">NEXT LEVEL →</a>
   </div>
 </body>
+
 </html>
