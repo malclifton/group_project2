@@ -12,13 +12,13 @@ $responses = ["H", "G", "A"];
 $bodyParts = ["empty", "head", "neck", "body", "arm", "arms", "leg", "full"];
 //change to get words from a text file
 $words = [
-    "TABERNACLE",
-    "VACCINATED",
-    "WAITLISTED",
-    "FAIRGROUND",
-    "EARTHQUAKE",
-    "CALISTHENICS",
-    "ABANDONING",
+    "SUBTERRANEAN",
+    "PHENOMENON",
+    "EXAGGERATION",
+    "INCONCEIVABLE",
+    "CONSTITUTIONAL",
+    "DISCOMBOBULATE",
+    "TRANSCONTINENTAL",
 ];
 
 //respond to guesses
@@ -143,7 +143,7 @@ if (isset($_GET['kp'])) {
         if (isWordCorrect()) {
             $WON = true;
             markGameAsComplete();
-            header('Location: ./win_hl1.html'); //goes to win page
+            header('Location: ./win_hl2.html'); //goes to win page
             exit();
         }
     } else {
@@ -153,13 +153,13 @@ if (isset($_GET['kp'])) {
             if (isBodyComplete()) {
                 markGameAsComplete(); //lost condition
                 restartGame();
-                header('Location: ./lose_hl1.html');
+                header('Location: ./lose_hl2.html');
                 exit();
             }
         } else {
             markGameAsComplete(); //lost condition
             restartGame();
-            header('Location: ./lose_hl1.html');
+            header('Location: ./lose_hl2.html');
             exit();
         }
     }
